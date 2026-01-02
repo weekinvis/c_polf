@@ -419,9 +419,9 @@ matriz_t_bdop * ajuste(matriz_t_bdop * x, matriz_t_bdop * y, uint grau) {
 
     matriz_t_bdop * passo_final_x = multiplica_matriz(inversa_transposta_normal, transposta_x);
 
-    free(transposta_x);
-    free(multiplicacao_transposta_normal);
-    free(inversa_transposta_normal);
+    liberar_matriz(transposta_x);
+    liberar_matriz(multiplicacao_transposta_normal);
+    liberar_matriz(inversa_transposta_normal);
 
     return substituir(passo_final_x, multiplica_matriz(passo_final_x, y));
 
